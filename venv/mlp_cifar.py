@@ -20,7 +20,7 @@ model.add(Dense(128,activation='relu'))
 model.add(Dense(10,activation='softmax'))
 
 #compile
-model.compile(optimizer='sgd',loss='categorical_crossentropy',metrics=['accuracy'])
+model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
 #Train
 history=model.fit(X_train,y_train,epochs=10,batch_size=64)
