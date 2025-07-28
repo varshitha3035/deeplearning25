@@ -15,6 +15,7 @@ y_test=to_categorical(y_test)
 #buid the architecture
 model=Sequential()
 model.add(Flatten(input_shape=(32,32,3)))
+model.add(Dense(256,activation='relu'))
 model.add(Dense(128,activation='relu'))
 model.add(Dense(10,activation='softmax'))
 
