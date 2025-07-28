@@ -23,7 +23,7 @@ model.add(Dense(10,activation='softmax'))
 model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
 #Train
-history=model.fit(X_train,y_train,epochs=10,batch_size=64)
+history=model.fit(X_train,y_train,epochs=30,batch_size=64)
 
 
 #Evaluate
