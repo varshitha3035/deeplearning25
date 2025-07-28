@@ -15,14 +15,11 @@ y_test=to_categorical(y_test)
 #buid the architecture
 model=Sequential()
 model.add(Flatten(input_shape=(32,32,3)))
-model.add(Dense(1024,activation='relu'))
-model.add(Dense(512,activation='relu'))
-model.add(Dense(256,activation='relu'))
 model.add(Dense(128,activation='relu'))
 model.add(Dense(10,activation='softmax'))
 
 #compile
-model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'],validation_split=0.2)
+model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
 #Train
 history=model.fit(X_train,y_train,epochs=10,batch_size=64)
@@ -39,3 +36,5 @@ plt.plot(history.history['val_accuracy'],color='red',label='val_accuracy')
 plt.legend()
 plt.title('Epochs Vs Accuracy')
 plt.show()
+
+
